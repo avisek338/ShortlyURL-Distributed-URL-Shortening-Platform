@@ -12,7 +12,8 @@ GET /{shortUrlCode}
 
 Load testing for redirection service using k6
 
-<img width="1531" height="787" alt="image" src="https://github.com/user-attachments/assets/1533bc2d-cc47-4172-9102-a88f1369dc23" />
+<img width="1353" height="872" alt="image" src="https://github.com/user-attachments/assets/70e039ce-902a-451d-9750-2eb500cc66ed" />
+
 
 
 
