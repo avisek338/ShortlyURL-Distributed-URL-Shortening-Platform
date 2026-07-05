@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: url-service
+  namespace: tiny-url
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: url-service
+
+  template:
+    metadata:
+      labels:
+        app: url-service
+
+    spec:
+      containers:
+        - name: url-service
+          image: url-service:v1
+          imagePullPolicy: Never
+
+          ports:
+            - containerPort: 8081
+
+          envFrom:
+            - configMapRef:
+                name: url-service
+
+            - secretRef:
+                name: url-service

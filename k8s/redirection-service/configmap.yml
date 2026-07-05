@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: redirection-service-config
+  namespace: tiny-url
+
+data:
+  SPRING_APPLICATION_NAME: redirection-service
+
+  # Database
+  SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
+  SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/url_db
+  SPRING_DATASOURCE_USERNAME: postgres
+  SPRING_JPA_HIBERNATE_DDL_AUTO: update
+
+  # Server
+  SERVER_PORT: "8082"
+
+  # Redis
+  SPRING_DATA_REDIS_HOST: redis
+  SPRING_DATA_REDIS_PORT: "6379"
+  SPRING_DATA_REDIS_SSL_ENABLED: "false"
+  CACHE_KEY_TTL: "30"
+
+  # Kafka
+  KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+  KAFKA_PRODUCER_RETRIES: "3"
+  KAFKA_PRODUCER_RETRY_BACKOFF_MS: "2000"
+  KAFKA_PRODUCER_RETRY_BACKOFF_MAX_MS: "8000"
+  KAFKA_PRODUCER_ENABLE_IDEMPOTENCE: "true"
